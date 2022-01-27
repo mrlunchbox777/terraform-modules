@@ -27,6 +27,25 @@ resource "helm_release" "pihole" {
   wait                       = var.wait
   wait_for_jobs              = var.wait_for_jobs
 
-  // postrender
-  // set & set sensitive
+  dynamic "postrender" {
+    for_each = var.postrender
+
+    binary_path = postrender.value.binary_path
+  }
+
+  dynamic "set" {
+    for_each = var.set
+
+    name = set.value.name
+    value = set.value.value
+    type = set.value.type
+  }
+
+  dynamic "set_sensitive" {
+    for_each = var.set
+
+    name = set.value.name
+    value = set.value.value
+    type = set.value.type
+  }
 }

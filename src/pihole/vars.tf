@@ -58,10 +58,12 @@ variable "namespace" {
   default = "default"
 }
 
-# variable "postrender" {
-#   type    = list(string)
-#   default = []
-# }
+variable "postrender" {
+  type    = list(object({
+    binary_path = string
+  }))
+  default = []
+}
 
 variable "recreate_pods" {
   type    = bool
@@ -88,23 +90,23 @@ variable "reuse_values" {
   default = false
 }
 
-# variable "set" {
-#   type    = list(object({
-#     name = string
-#     value = string
-#     type = string
-#   }))
-#   default = []
-# }
+variable "set" {
+  type    = list(object({
+    name = string
+    value = string
+    type = string
+  }))
+  default = []
+}
 
-# variable "set_sensitive" {
-#   type    = list(object({
-#     name = string
-#     value = string
-#     type = string
-#   }))
-#   default = []
-# }
+variable "set_sensitive" {
+  type    = list(object({
+    name = string
+    value = string
+    type = string
+  }))
+  default = []
+}
 
 variable "skip_crds" {
   type    = bool
