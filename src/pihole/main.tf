@@ -22,7 +22,6 @@ resource "helm_release" "pihole" {
   reset_values               = var.reset_values
   skip_crds                  = var.skip_crds
   timeout                    = var.timeout
-  version                    = var.version
   values                     = var.values
   wait                       = var.wait
   wait_for_jobs              = var.wait_for_jobs

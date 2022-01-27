@@ -123,11 +123,6 @@ variable "values" {
   default = []
 }
 
-variable "version" {
-  type    = string
-  default = "2.4.0"
-}
-
 variable "wait" {
   type    = bool
   default = true
