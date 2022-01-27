@@ -83,11 +83,28 @@ variable "reset_values" {
   default = false
 }
 
-// here
 variable "reuse_values" {
   type    = bool
   default = false
 }
+
+# variable "set" {
+#   type    = list(object({
+#     name = string
+#     value = string
+#     type = string
+#   }))
+#   default = []
+# }
+
+# variable "set_sensitive" {
+#   type    = list(object({
+#     name = string
+#     value = string
+#     type = string
+#   }))
+#   default = []
+# }
 
 variable "skip_crds" {
   type    = bool
