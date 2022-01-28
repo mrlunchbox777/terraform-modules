@@ -9,6 +9,6 @@ You should also be able to basically implement a [git module](https://www.terraf
 
 ## Future Considerations
 
-[] - [FreeIPA](https://www.freeipa.org/page/About)
-[] - [CoreDNS](https://github.com/coredns/helm)
-[] - [Authelia](https://www.authelia.com/)
+- [] [FreeIPA](https://www.freeipa.org/page/About)
+- [] [CoreDNS](https://github.com/coredns/helm)
+- [] [Authelia](https://www.authelia.com/)
