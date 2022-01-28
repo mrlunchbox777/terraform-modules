@@ -5,7 +5,7 @@ resource "helm_release" "pihole" {
   namespace = var.namespace
 
   atomic                     = var.atomic
-  chart                      = "./charts/pihole-2.4.0"
+  chart                      = "charts/pihole-2.4.0"
   cleanup_on_fail            = var.cleanup_on_fail
   create_namespace           = var.create_namespace
   dependency_update          = var.dependency_update
