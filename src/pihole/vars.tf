@@ -28,7 +28,7 @@ variable "disable_openapi_validation" {
   default = false
 }
 
-variable "disable_webhook" {
+variable "disable_webhooks" {
   type    = bool
   default = false
 }
