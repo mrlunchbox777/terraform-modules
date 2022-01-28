@@ -28,23 +28,26 @@ resource "helm_release" "pihole" {
 
   dynamic "postrender" {
     for_each = var.postrender
-
-    binary_path = postrender.value.binary_path
+    content {
+      binary_path = postrender.value.binary_path
+    }
   }
 
   dynamic "set" {
     for_each = var.set
-
-    name  = set.value.name
-    value = set.value.value
-    type  = set.value.type
+    content {
+      name  = set.value.name
+      value = set.value.value
+      type  = set.value.type
+    }
   }
 
   dynamic "set_sensitive" {
     for_each = var.set_sensitive
-
-    name  = set_sensitive.value.name
-    value = set_sensitive.value.value
-    type  = set_sensitive.value.type
+    content {
+      name  = set_sensitive.value.name
+      value = set_sensitive.value.value
+      type  = set_sensitive.value.type
+    }
   }
 }
