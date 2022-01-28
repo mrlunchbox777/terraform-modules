@@ -35,16 +35,16 @@ resource "helm_release" "pihole" {
   dynamic "set" {
     for_each = var.set
 
-    name = set.value.name
+    name  = set.value.name
     value = set.value.value
-    type = set.value.type
+    type  = set.value.type
   }
 
   dynamic "set_sensitive" {
-    for_each = var.set
+    for_each = var.set_sensitive
 
-    name = set.value.name
-    value = set.value.value
-    type = set.value.type
+    name  = set_sensitive.value.name
+    value = set_sensitive.value.value
+    type  = set_sensitive.value.type
   }
 }

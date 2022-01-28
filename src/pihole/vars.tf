@@ -59,7 +59,7 @@ variable "namespace" {
 }
 
 variable "postrender" {
-  type    = list(object({
+  type = list(object({
     binary_path = string
   }))
   default = []
@@ -91,19 +91,19 @@ variable "reuse_values" {
 }
 
 variable "set" {
-  type    = list(object({
-    name = string
+  type = list(object({
+    name  = string
     value = string
-    type = string
+    type  = string
   }))
   default = []
 }
 
 variable "set_sensitive" {
-  type    = list(object({
-    name = string
+  type = list(object({
+    name  = string
     value = string
-    type = string
+    type  = string
   }))
   default = []
 }
