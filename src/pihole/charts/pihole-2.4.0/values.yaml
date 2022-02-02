@@ -215,14 +215,14 @@ topologySpreadConstraints: []
 affinity: {}
 
 # -- Administrator password when not using an existing secret (see below)
-adminPassword: "admin"
+# adminPassword: "admin"
 
 # -- Use an existing secret for the admin password.
-admin:
-  # -- Specify an existing secret to use as admin password
-  existingSecret: ""
-  # -- Specify the key inside the secret to use
-  passwordKey: "password"
+# admin:
+#   # -- Specify an existing secret to use as admin password
+#   existingSecret: ""
+#   # -- Specify the key inside the secret to use
+#   passwordKey: "password"
 
 # -- extraEnvironmentVars is a list of extra enviroment variables to set for pihole to use
 extraEnvVars: {}

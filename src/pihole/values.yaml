@@ -46,10 +46,6 @@ resources:
   requests:
    cpu: 100m
    memory: 128Mi
-# -- Administrator password when not using an existing secret (see below)
-adminPassword: "admin"
-
-# -- Use an existing secret for the admin password.
 admin:
   # -- Specify an existing secret to use as admin password
   existingSecret: ""
@@ -84,13 +80,6 @@ dnsmasq:
   customSettings:
   # otherSettings:
   # - rebind-domain-ok=/plex.direct/
-
-  # -- Here we specify custom cname entries that should point to `A` records or
-  # elements in customDnsEntries array.
-  # The format should be:
-  #  - cname=cname.foo.bar,foo.bar
-  #  - cname=cname.bar.foo,bar.foo
-  #  - cname=cname record,dns record
   customCnameEntries: []
   # Here we specify custom cname entries that should point to `A` records or
   # elements in customDnsEntries array.
