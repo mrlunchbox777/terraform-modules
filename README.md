@@ -25,3 +25,7 @@ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/master/manife
 
 kubectl wait --for condition=ready -n metallb-system pod --all
 ```
+
+## Find a way to integrate the basic-setup
+
+## Find a way to integrate the pi-k3s-setup
