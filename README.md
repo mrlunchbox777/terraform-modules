@@ -10,6 +10,7 @@ You should also be able to basically implement a [git module](https://www.terraf
 
 ## Future Considerations
 
+- [ ] [Screeps](https://github.com/yz89122/screeps-docker) and [Screeps Server](https://github.com/screeps/screeps)
 - [ ] [Rook](https://rook.io/)
 - [ ] [FreeIPA](https://www.freeipa.org/page/About)
 - [ ] [CoreDNS](https://github.com/coredns/helm)
