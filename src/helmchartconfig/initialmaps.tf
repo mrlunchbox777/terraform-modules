@@ -1,8 +1,8 @@
 locals {
-	basemap = (var.base_config != null
-		? var.base_config
-		: {}
-	)
+  basemap = (var.base_config != null
+    ? var.base_config
+    : {}
+  )
 
   initialmap = {
     name                       = null
@@ -32,21 +32,21 @@ locals {
     disable_openapi_validation = null
     wait                       = null
     wait_for_jobs              = null
-    values                     = null
-    set                        = null
-    set_sensitive              = null
+    values                     = []
+    set                        = []
+    set_sensitive              = []
     dependency_update          = null
     replace                    = null
     description                = null
-    postrender                 = null
+    postrender                 = []
     lint                       = null
     create_namespace           = null
   }
 
-	overridemap = (var.override_config != null
-		? var.override_config
-		: {}
-	)
+  overridemap = (var.override_config != null
+    ? var.override_config
+    : {}
+  )
 
   parametersmap = {
     name                       = var.name

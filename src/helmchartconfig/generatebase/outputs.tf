@@ -1,3 +1,3 @@
 output "helmchartconfig" {
-  value = local.helmchartconfig
+  value = module.config.helmchartconfig
 }
