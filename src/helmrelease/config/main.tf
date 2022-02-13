@@ -1,5 +1,5 @@
 locals {
-  helmchartconfig = {for k, v in local.initialmap :
+  config = {for k, v in local.initialmap :
     k => (k == "values" || k == "set" || k == "set_sensitive" || k == "postrender"
 			? concat(
 				try(coalescelist(local.initialmap[k], []), []),

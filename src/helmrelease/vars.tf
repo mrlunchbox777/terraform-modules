@@ -49,5 +49,5 @@ variable "config" {
   })
   default     = null
   nullable    = true
-  description = "Pass an map that matches a scaffold from https://github.com/mrlunchbox777/terraform-modules/tree/main/src/helmchartconfig"
+  description = "Pass an map that matches a scaffold from https://github.com/mrlunchbox777/terraform-modules/tree/main/src/helmrelease/config"
 }
