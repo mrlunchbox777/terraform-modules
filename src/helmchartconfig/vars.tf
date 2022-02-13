@@ -1,4 +1,114 @@
 ########################################################
+# configs to merge
+########################################################
+
+variable "base_config" {
+	type = object({
+		name = string
+		chart = string
+		repository = string
+		repository_key_file = string
+		repository_cert_file = string
+		repository_ca_file = string
+		repository_username = string
+		repository_password = string
+		devel = bool
+		version = string
+		namespace = string
+		verify = bool
+		keyring = string
+		timeout = number
+		disable_webhooks = bool
+		reuse_values = bool
+		reset_values = bool
+		force_update = bool
+		recreate_pods = bool
+		cleanup_on_fail = bool
+		max_history = number
+		atomic = bool
+		skip_crds = bool
+		render_subchart_notes = bool
+		disable_openapi_validation = bool
+		wait = bool
+		wait_for_jobs = bool
+		values = list(string)
+  	set = list(object({
+  	  name  = string
+  	  value = string
+  	  type  = string
+  	}))
+	  set_sensitive = list(object({
+	    name  = string
+	    value = string
+	    type  = string
+	  }))
+		dependency_update = bool
+		replace = bool
+		description = string
+		postrender = list(object({
+			binary_path = string
+		}))
+		lint = bool
+		create_namespace = bool
+	})
+	default = {}
+	description = "Pass 0-1 base_configs"
+}
+
+variable "override_config" {
+	type = object({
+		name = string
+		chart = string
+		repository = string
+		repository_key_file = string
+		repository_cert_file = string
+		repository_ca_file = string
+		repository_username = string
+		repository_password = string
+		devel = bool
+		version = string
+		namespace = string
+		verify = bool
+		keyring = string
+		timeout = number
+		disable_webhooks = bool
+		reuse_values = bool
+		reset_values = bool
+		force_update = bool
+		recreate_pods = bool
+		cleanup_on_fail = bool
+		max_history = number
+		atomic = bool
+		skip_crds = bool
+		render_subchart_notes = bool
+		disable_openapi_validation = bool
+		wait = bool
+		wait_for_jobs = bool
+		values = list(string)
+  	set = list(object({
+  	  name  = string
+  	  value = string
+  	  type  = string
+  	}))
+	  set_sensitive = list(object({
+	    name  = string
+	    value = string
+	    type  = string
+	  }))
+		dependency_update = bool
+		replace = bool
+		description = string
+		postrender = list(object({
+			binary_path = string
+		}))
+		lint = bool
+		create_namespace = bool
+	})
+	default = {}
+	description = "Pass 0-1 override_configs"
+}
+
+########################################################
 # vars match the order here - https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release
 ########################################################
 
@@ -44,6 +154,7 @@ variable "reset_values" {
   type    = bool
   default = false
 }
+
 variable "force_update" {
   type    = bool
   default = false
@@ -129,6 +240,7 @@ variable "replace" {
 
 variable "description" {
   type    = string
+	default = "Configured using https://github.com/mrlunchbox777/terraform-modules/tree/main/src/helmchartconfig"
 }
 
 variable "postrender" {
