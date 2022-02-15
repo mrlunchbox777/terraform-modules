@@ -1,5 +1,7 @@
 # metallb
 
+pulling the chart from [here](https://github.com/metallb/metallb/tree/main/charts/metallb)
+
 ## Example
 
 Here is an example of how to use metallb
@@ -12,5 +14,7 @@ module "metallb" {
 		helm = helm.special
 		kubernetes = kubernetes.special
 	}
+	
+	configure_kind = true
 }
 ```

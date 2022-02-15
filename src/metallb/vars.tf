@@ -49,3 +49,58 @@ variable "config" {
   })
   description = "Pass an map that matches a scaffold from https://github.com/mrlunchbox777/terraform-modules/tree/main/src/helmrelease/config"
 }
+
+variable "config_map_data_address_pools" {
+  type = list(object({
+    name      = string
+    protocol  = string
+    addresses = list(string)
+  }))
+  default     = []
+  nullable    = true
+  description = "Not used if there is config_map_data or configure_kind is enabled. Basic Address Pool configuration, for advanced Address Pool configuration pass config_map_data instead. The protocol can be 'bgp' or 'layer2'. See docs for more - https://metallb.org/configuration/#bgp-configuration"
+}
+
+variable "config_map_annotations" {
+  type        = map(string)
+  default     = null
+  nullable    = true
+  description = "Annotations for config map to setup metallb"
+}
+
+variable "config_map_data" {
+  type        = string
+  default     = null
+  nullable    = true
+  description = "Data for the config map to setup metallb, overrides all other config_map_data_* settings and prevents configure_kind"
+}
+
+variable "config_map_data_peers" {
+  type = list(object({
+    peer_address = string
+    peer_asn     = number
+    my_asn       = number
+  }))
+  default     = []
+  nullable    = true
+  description = "Not used if there is config_map_data or configure_kind is enabled. Basic BGP Peer configuration, for advanced BGP configuration pass config_map_data instead. See docs for more - https://metallb.org/configuration/#bgp-configuration"
+}
+
+variable "config_map_labels" {
+  type        = map(string)
+  default     = null
+  nullable    = true
+  description = "Labels for config map to setup metallb"
+}
+
+variable "configure_kind" {
+  type        = bool
+  default     = false
+  description = "Not used if there is config_map_data. Builds a config map for KinD, requires jq is available and is for testing purposes only, prevents the use of config_map_data_* variables."
+}
+
+variable "configure_kind_force_update" {
+  type        = bool
+  default     = false
+  description = "Toggle this value to force update the ips that KinD configuration will use"
+}
