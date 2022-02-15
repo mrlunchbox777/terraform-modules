@@ -96,11 +96,11 @@ variable "config_map_labels" {
 variable "configure_kind" {
   type        = bool
   default     = false
-  description = "Not used if there is config_map_data. Builds a config map for KinD, requires jq is available and is for testing purposes only, prevents the use of config_map_data_* variables."
+  description = "FOR TESTING PURPOSES ONLY!!!!! Not used if there is config_map_data. Builds a config map for KinD, requires jq is available, prevents the use of config_map_data_* variables."
 }
 
 variable "configure_kind_force_update" {
   type        = bool
   default     = false
-  description = "Toggle this value to force update the ips that KinD configuration will use"
+  description = "FOR TESTING PURPOSES ONLY!!!!! Toggle this value to force update the ips that KinD configuration will use"
 }

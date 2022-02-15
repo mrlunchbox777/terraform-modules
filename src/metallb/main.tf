@@ -28,15 +28,12 @@ locals {
   )
 }
 
-resource "null_resource" "local_exec" {
+data "external" "local_exec" {
   count = var.configure_kind ? 1 : 0
-
-  triggers = {
-    force_update = var.configure_kind_force_update
-    metallb_revision = module.metallb.release.revision
+  program = ["bash", "${path.module}/get_kind_ip_range.sh"]
+  query = {
+    name = "kind"
   }
-
-  # docker network inspect kind | jq '[.[] | .IPAM.Config | .[] | .Subnet]' | jq -r '.[0]'
 }
 
 resource "kubernetes_config_map" "metallb_config_map" {

@@ -8,9 +8,9 @@ terraform {
       source  = "hashicorp/kubernetes"
       version = ">= 2.7"
     }
-    null = {
-      source  = "hashicorp/null"
-      version = ">= 3.1"
+    external = {
+      source  = "hashicorp/external"
+      version = ">= 2.2"
     }
   }
 }
