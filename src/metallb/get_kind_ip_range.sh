@@ -11,6 +11,9 @@ array_length=$(echo $ips_and_cidrs | jq '. | length')
 for i in $(seq 0 $(($array_length - 1))); do
 	ips=$(echo $ips_and_cidrs | jq -r '.['$i'] | .ips')
 	cidr=$(echo $ips_and_cidrs | jq -r '.['$i'] | .cidr')
+	if [ $cidr -lt 16 ]; then
+		ips=$(echo $ips | sed 's/^\([0-9]\{1,3\}\.\)[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}$/\1255.255.0/g')
+		cidr=24
 	if [ $cidr -lt 24 ]; then
 		ips=$(echo $ips | sed 's/^\([0-9]\{1,3\}\.[0-9]\{1,3\}\.\)[0-9]\{1,3\}\.[0-9]\{1,3\}$/\1255.0/g')
 		cidr=24
