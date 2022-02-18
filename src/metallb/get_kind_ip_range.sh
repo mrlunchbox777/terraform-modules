@@ -24,5 +24,6 @@ for i in $(seq 0 $(($array_length - 1))); do
 	ips_and_cidrs=$(echo $ips_and_cidrs | jq '.['$i'].ips="'$ips'" | .['$i'].cidr="'$cidr'"')
 done
 
+# TODO make an example of how to do this kind of work for external data sources
 # jq -n --arg ips_and_cidrs "$ips_and_cidrs" '{"ips_and_cidrs":$ips_and_cidrs}'
 echo $ips_and_cidrs | jq '{"ips_and_cidrs": .}'
