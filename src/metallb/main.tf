@@ -2,10 +2,12 @@ locals {
   config_map_heredoc = (local.valid_config && var.config_map_data == null && !var.configure_kind ? <<-EOF
   %{if length(var.config_map_address_pools) > 0}address-pools:%{endif}
   %{for pool in var.config_map_address_pools}
-  - name: default
-    protocol: layer2
+  - name: ${pool.name}
+    protocol: ${pool.protocol}
     addresses:
-    - 172.21.255.200-172.21.255.250
+  %{for address in pool.addresses}
+    - ${address}
+  %{endfor}
   %{endfor}
   EOF
   : "")
