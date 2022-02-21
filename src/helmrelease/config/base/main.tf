@@ -1,4 +1,5 @@
 module "config" {
+  // this needs to be fixed (also look at the readmes)
   source = "git::https://github.com/mrlunchbox777/terraform-modules//src/helmrelease/config?ref=helmrelease/config/1.0.0"
 
   name                       = var.name
