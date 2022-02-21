@@ -8,7 +8,7 @@ To find a usable tag run:
 git tag -l | grep -E '^helmrelease\/[0-9]+\.[0-9]+\.[0-9]+$' | sort -r
 ```
 
-Typically you'll want the latest version (found at the top of the last command).
+Typically you'll want the latest version (found at the top of the last command, you can append ` | head -n 1` to just get the most recent version).
 
 ## Example
 
