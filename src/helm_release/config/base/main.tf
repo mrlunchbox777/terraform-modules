@@ -1,5 +1,5 @@
 module "config" {
-  source = "git::https://github.com/mrlunchbox777/terraform-modules//src/helmrelease/config?ref=helmrelease/config/1.0.0"
+  source = "git::https://github.com/mrlunchbox777/terraform-modules//src/helm_release/config?ref=helm_release/config/0.0.2"
 
   name                       = var.name
   chart                      = var.chart

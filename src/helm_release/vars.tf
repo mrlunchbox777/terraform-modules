@@ -47,5 +47,5 @@ variable "config" {
     lint             = bool
     create_namespace = bool
   })
-  description = "Pass an map that matches a scaffold from https://github.com/mrlunchbox777/terraform-modules/tree/main/src/helmrelease/config"
+  description = "Pass an map that matches a scaffold from https://github.com/mrlunchbox777/terraform-modules/tree/main/src/helm_release/config"
 }
