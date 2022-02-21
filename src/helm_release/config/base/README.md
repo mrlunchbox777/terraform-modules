@@ -4,7 +4,9 @@ This is designed to create a helm release config with some generally good defaul
 
 This can provide a good way to generate a base config for downstream projects.
 
-See [the helm_release config](/src/helm_release/config/README.md) for more details.
+See [the helm_release config](/src/helm_release/config/README.md) for more details on what can be offered.
+
+See [the helm_release](/src/helm_release/README.md) for more details on how these can be used.
 
 ## Find Tags
 
