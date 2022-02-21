@@ -4,7 +4,7 @@ This is used to create a configuration object for the [helm_release module](/src
 
 It's a base object that provides all the things required for a helm release, and the [helm_release config base](/src/helm_release/config/base/README.md) gives good defaults. It can then be further configured and used in downstream projects to provide better defaults.
 
-Overrides are calculated by ignoring nulls at every step. For the order the baseconfig populates values, override config then pushes values on top, and finally the variable parameters push values on top of that.
+Overrides are calculated by ignoring nulls at every step. For the order the base config populates values, override config then pushes values on top, and finally the variable parameters push values on top of that.
 
 ## Find Tags
 
