@@ -1,8 +1,8 @@
 # helmrelease config
 
-This is used to create a configuration object for helm chart releases.
+This is used to create a configuration object for the [helmrelease module](/src/helmrelease/README.md).
 
-It's a base object that provides all the things required for a helm release, and the [submodule genneratebase](/src/helmrelease/config/base/README.md) gives good defaults. It can then be further configured and used in downstream projects to provide better defaults.
+It's a base object that provides all the things required for a helm release, and the [helmrelease config base](/src/helmrelease/config/base/README.md) gives good defaults. It can then be further configured and used in downstream projects to provide better defaults.
 
 Overrides are calculated by ignoring nulls at every step. For the order the baseconfig populates values, override config then pushes values on top, and finally the variable parameters push values on top of that.
 
