@@ -1,5 +1,7 @@
 # helmrelease
 
+This is intended to be an easier to use wrapper around the [helm_release](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) in terraform. It makes use of a [config module](https://github.com/mrlunchbox777/terraform-modules/tree/main/src/helmrelease/config) that allows for merging configs. That merging allows starting with a [base module](https://github.com/mrlunchbox777/terraform-modules/tree/main/src/helmrelease/config/base) and then having modules implement that with good defaults while still allowing end users to customize everything.
+
 ## Find Tags
 
 To find a usable tag run:
