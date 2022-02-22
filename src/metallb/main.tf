@@ -18,7 +18,9 @@ locals {
   - name: default
     protocol: layer2
     addresses:
-    - 172.21.255.200-172.21.255.250
+  %{for address in data.local_exec.result.ips_and_cidrs}
+    - ${address.ips}/${address.cidr}
+  %{endfor}
   EOF
 
   computed_config_map_data = (var.config.config_map_data != null

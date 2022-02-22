@@ -14,7 +14,7 @@ for i in $(seq 0 $(($array_length - 1))); do
 	if [ $cidr -lt 16 ]; then
 		ips=$(echo $ips | sed 's/^\([0-9]\{1,3\}\.\)[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}$/\1255.255.0/g')
 		cidr=24
-	if [ $cidr -lt 24 ]; then
+	elif [ $cidr -lt 24 ]; then
 		ips=$(echo $ips | sed 's/^\([0-9]\{1,3\}\.[0-9]\{1,3\}\.\)[0-9]\{1,3\}\.[0-9]\{1,3\}$/\1255.0/g')
 		cidr=24
 	elif [ $cidr -lt 28 ]; then
