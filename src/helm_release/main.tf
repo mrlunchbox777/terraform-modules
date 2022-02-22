@@ -12,36 +12,36 @@ resource "helm_release" "release" {
   namespace                  = var.config.namespace
   verify                     = var.config.verify
   keyring                    = var.config.keyring
-  timeout                    = var.timeout
-  disable_webhooks           = var.disable_webhooks
-  reuse_values               = var.reuse_values
-  reset_values               = var.reset_values
-  force_update               = var.force_update
-  recreate_pods              = var.recreate_pods
-  cleanup_on_fail            = var.cleanup_on_fail
-  max_history                = var.max_history
-  atomic                     = var.atomic
-  skip_crds                  = var.skip_crds
-  render_subchart_notes      = var.render_subchart_notes
-  disable_openapi_validation = var.disable_openapi_validation
-  wait                       = var.wait
-  wait_for_jobs              = var.wait_for_jobs
-  values                     = var.values
-  dependency_update          = var.dependency_update
-  replace                    = var.replace
-  description                = var.description
-  lint                       = var.lint
-  create_namespace           = var.create_namespace
+  timeout                    = var.config.timeout
+  disable_webhooks           = var.config.disable_webhooks
+  reuse_values               = var.config.reuse_values
+  reset_values               = var.config.reset_values
+  force_update               = var.config.force_update
+  recreate_pods              = var.config.recreate_pods
+  cleanup_on_fail            = var.config.cleanup_on_fail
+  max_history                = var.config.max_history
+  atomic                     = var.config.atomic
+  skip_crds                  = var.config.skip_crds
+  render_subchart_notes      = var.config.render_subchart_notes
+  disable_openapi_validation = var.config.disable_openapi_validation
+  wait                       = var.config.wait
+  wait_for_jobs              = var.config.wait_for_jobs
+  values                     = var.config.values
+  dependency_update          = var.config.dependency_update
+  replace                    = var.config.replace
+  description                = var.config.description
+  lint                       = var.config.lint
+  create_namespace           = var.config.create_namespace
 
   dynamic "postrender" {
-    for_each = var.postrender
+    for_each = var.config.postrender
     content {
       binary_path = postrender.value.binary_path
     }
   }
 
   dynamic "set" {
-    for_each = var.set
+    for_each = var.config.set
     content {
       name  = set.value.name
       value = set.value.value
@@ -50,7 +50,7 @@ resource "helm_release" "release" {
   }
 
   dynamic "set_sensitive" {
-    for_each = var.set_sensitive
+    for_each = var.config.set_sensitive
     content {
       name  = set_sensitive.value.name
       value = set_sensitive.value.value
