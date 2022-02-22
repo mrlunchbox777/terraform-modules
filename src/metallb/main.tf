@@ -38,7 +38,7 @@ resource "kubernetes_config_map" "metallb_config_map" {
 }
 
 module "metallb" {
-  source = "git::https://github.com/mrlunchbox777/terraform-modules//src/helmrelease?ref=helmrelease/0.0.4"
+  source = "git::https://github.com/mrlunchbox777/terraform-modules//src/helm_release?ref=helm_release/0.0.4"
 
   config = var.config.helm_release_config
 }
