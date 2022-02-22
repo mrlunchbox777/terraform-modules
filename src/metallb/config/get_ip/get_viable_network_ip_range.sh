@@ -2,6 +2,7 @@
 
 set -e
 
+# https://kind.sigs.k8s.io/docs/user/loadbalancer/
 eval "$(jq -r '@sh "network_name=\(.name)"')"
 all_subnets=$(docker network inspect $network_name | jq '[.[] | .IPAM.Config | .[] | .Subnet]')
 ipv4_subnets=$(echo $all_subnets | jq '[.[] | select(test("^([0-9]{1,3}\\.){3}[0-9]{1,3}"))]')

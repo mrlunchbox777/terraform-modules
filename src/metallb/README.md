@@ -4,7 +4,7 @@ Pulling the chart from [here](https://github.com/metallb/metallb/tree/main/chart
 
 Configured with [metallb config module](/src/metallb/config/README.md)
 
-TODO split the kind implementation into a module
+If you are looking for a configuration for a development machine using kind [here are good defaults](/src/metallb/config/kind/README.md)
 
 ## Find Tags
 

@@ -12,10 +12,5 @@ terraform {
       source  = "hashicorp/random"
       version = ">= 3.1.0"
     }
-    // this needs to be moved to a testing only extension
-    external = {
-      source  = "hashicorp/external"
-      version = ">= 2.2"
-    }
   }
 }

@@ -4,6 +4,8 @@ This is used to create a configuration object for the [metallb module](/src/meta
 
 It's a base object that provides all the things required for a metallb release.
 
+If you are looking for a configuration for a development machine using kind [here are good defaults](/src/metallb/config/kind/README.md)
+
 ## Find Tags
 
 To find a usable tag run:

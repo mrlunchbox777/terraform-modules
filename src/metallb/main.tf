@@ -1,5 +1,5 @@
 locals {
-  config_map_heredoc = (local.valid_config && var.config.config_map_data == null && !var.config.configure_kind ? <<-EOF
+  config_map_heredoc = (local.valid_config && var.config.config_map_data == null ? <<-EOF
   %{if length(var.config.config_map_address_pools) > 0}address-pools:%{endif}
   %{for pool in var.config.config_map_address_pools}
   - name: ${pool.name}
@@ -9,35 +9,19 @@ locals {
     - ${address}
   %{endfor}
   %{endfor}
+  %{if length(var.config.config_map_data_peers) > 0}peers:%{endif}
+  %{for peer in var.config.config_map_data_peers}
+  - peer-address: ${peer.peer_address}
+    peer-asn: ${peer.peer_asn}
+    my-asn: ${peer.my_asn}
+  %{endfor}
   EOF
   : "")
 
-  # https://kind.sigs.k8s.io/docs/user/loadbalancer/
-  kind_config_map_data = var.config.config_map_data == null && var.config.configure_kind ? "" : <<-EOF
-  address-pools:
-  - name: default
-    protocol: layer2
-    addresses:
-  %{for address in data.local_exec.result.ips_and_cidrs}
-    - ${address.ips}/${address.cidr}
-  %{endfor}
-  EOF
-
   computed_config_map_data = (var.config.config_map_data != null
     ? var.config.config_map_data
-    : (var.config.configure_kind
-      ? local.kind_config_map_data
-      : local.config_map_heredoc
-    )
+    : local.config_map_heredoc
   )
-}
-
-data "external" "local_exec" {
-  count   = var.config.configure_kind ? 1 : 0
-  program = ["bash", "${path.module}/get_kind_ip_range.sh"]
-  query = {
-    name = "kind"
-  }
 }
 
 resource "kubernetes_config_map" "metallb_config_map" {

@@ -12,9 +12,7 @@ variable "config" {
       peer_asn     = number
       my_asn       = number
     }))
-    config_map_labels           = string
-    configure_kind              = bool
-    configure_kind_force_update = bool
+    config_map_labels = string
     helm_release_config = object({
       name                       = string
       chart                      = string
@@ -63,7 +61,7 @@ variable "config" {
       lint             = bool
       create_namespace = bool
     })
-		memberlist_secret_override = string
+    memberlist_secret_override = string
   })
   description = "Pass an map that matches a scaffold from https://github.com/mrlunchbox777/terraform-modules/tree/main/src/metallb/config"
 }
