@@ -51,6 +51,26 @@ resource "kubernetes_config_map" "metallb_config_map" {
   }
 }
 
+resource "random_id" "metallb_secret_key" {
+  keepers = {
+    helm_revision = module.metallb.release.metadata.revision
+  }
+
+  byte_length = 128
+}
+
+resource "kubernetes_secret" "metallb_secret" {
+  metadata {
+    annotations = var.config.config_map_annotations
+    labels      = var.config.config_map_labels
+    name        = "${var.config.helm_release_config.name}-memberlist"
+    namespace   = var.config.helm_release_config.namespace
+  }
+
+  # terraform hide
+  binary_data = random_id.metallb_secret_key.id
+}
+
 module "metallb" {
   source = "git::https://github.com/mrlunchbox777/terraform-modules//src/helmrelease?ref=helmrelease/0.0.4"
 

@@ -106,3 +106,10 @@ variable "configure_kind_force_update" {
   default     = false
   description = "FOR TESTING PURPOSES ONLY!!!!! Toggle this value to force update the ips that KinD configuration will use"
 }
+
+variable "memberlist_secret_override" {
+  type        = string
+  default     = null
+  nullable    = true
+  description = "Secret memberlist override, if not set one is automatically generated"
+}

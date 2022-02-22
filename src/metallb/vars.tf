@@ -1,20 +1,20 @@
 variable "config" {
   type = object({
-		config_map_data_address_pools = list(object({
+    config_map_data_address_pools = list(object({
       name      = string
       protocol  = string
       addresses = list(string)
     }))
-		config_map_annotations = list(string)
-		config_map_data = string
-		config_map_data_peers = list(object({
+    config_map_annotations = list(string)
+    config_map_data        = string
+    config_map_data_peers = list(object({
       peer_address = string
       peer_asn     = number
       my_asn       = number
     }))
-		config_map_labels = string
-		configure_kind = bool
-		configure_kind_force_update = bool
+    config_map_labels           = string
+    configure_kind              = bool
+    configure_kind_force_update = bool
     helm_release_config = object({
       name                       = string
       chart                      = string
@@ -63,6 +63,7 @@ variable "config" {
       lint             = bool
       create_namespace = bool
     })
+		memberlist_secret_override = string
   })
   description = "Pass an map that matches a scaffold from https://github.com/mrlunchbox777/terraform-modules/tree/main/src/metallb/config"
 }
