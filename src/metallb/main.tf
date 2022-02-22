@@ -69,8 +69,9 @@ resource "kubernetes_secret" "metallb_secret" {
     namespace   = var.config.helm_release_config.namespace
   }
 
-  # terraform hide
-  binary_data = random_id.metallb_secret_key.id
+  binary_data = (length(var.config.memberlist_secret_override) > 0
+    ? var.config.memberlist_secret_override
+    : random_id.metallb_secret_key.id)
 }
 
 module "metallb" {
