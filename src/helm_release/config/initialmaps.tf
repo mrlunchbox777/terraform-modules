@@ -1,7 +1,7 @@
 locals {
   basemap = (var.base_config != null
     ? var.base_config
-    : {}
+    : local.initialmap
   )
 
   initialmap = {
@@ -45,7 +45,7 @@ locals {
 
   overridemap = (var.override_config != null
     ? var.override_config
-    : {}
+    : local.initialmap
   )
 
   parametersmap = {
