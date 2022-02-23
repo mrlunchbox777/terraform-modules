@@ -14,7 +14,7 @@ locals {
     repository_username        = null
     repository_password        = null
     devel                      = null
-    release_version                    = null
+    chart_version              = null
     namespace                  = null
     verify                     = null
     keyring                    = null
@@ -58,7 +58,7 @@ locals {
     repository_username        = var.repository_username
     repository_password        = var.repository_password
     devel                      = var.devel
-    release_version                    = var.version
+    chart_version              = var.chart_version
     namespace                  = var.namespace
     verify                     = var.verify
     keyring                    = var.keyring

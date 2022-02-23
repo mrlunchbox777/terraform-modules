@@ -13,7 +13,7 @@ variable "base_config" {
     repository_username        = string
     repository_password        = string
     devel                      = bool
-    release_version                    = string
+    chart_version              = string
     namespace                  = string
     verify                     = bool
     keyring                    = string
@@ -67,7 +67,7 @@ variable "override_config" {
     repository_username        = string
     repository_password        = string
     devel                      = bool
-    release_version                    = string
+    chart_version              = string
     namespace                  = string
     verify                     = bool
     keyring                    = string
@@ -177,7 +177,7 @@ variable "devel" {
   description = "https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release#devel"
 }
 
-variable "release_version" {
+variable "chart_version" {
   type        = string
   default     = null
   nullable    = true
