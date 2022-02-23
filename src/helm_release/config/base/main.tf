@@ -11,7 +11,7 @@ module "config" {
   repository_username        = var.repository_username
   repository_password        = var.repository_password
   devel                      = var.devel
-  # version                    = var.version
+  release_version                    = var.release_version
   namespace                  = var.namespace
   verify                     = var.verify
   keyring                    = var.keyring

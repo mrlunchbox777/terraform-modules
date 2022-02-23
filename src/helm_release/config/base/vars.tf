@@ -63,7 +63,7 @@ variable "devel" {
   description = "https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release#devel"
 }
 
-variable "version" {
+variable "release_version" {
   type        = string
   default     = null
   nullable    = true

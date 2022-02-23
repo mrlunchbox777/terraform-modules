@@ -8,7 +8,7 @@ resource "helm_release" "release" {
   repository_username        = var.config.repository_username
   repository_password        = var.config.repository_password
   devel                      = var.config.devel
-  version                    = var.config.version
+  version                    = var.config.release_version
   namespace                  = var.config.namespace
   verify                     = var.config.verify
   keyring                    = var.config.keyring
