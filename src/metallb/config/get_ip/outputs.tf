@@ -1,5 +1,5 @@
 output "get_ip_range_output" {
-  value       = external.get_ip_range
+  value       = data.external.get_ip_range
   description = "Raw external output"
 }
 

@@ -1,5 +1,5 @@
 locals {
-  ip_cidrs = [for address in external.get_ip_range.result.ips_and_cidrs :
+  ip_cidrs = [for address in data.external.get_ip_range.result.ips_and_cidrs :
     "${address.ips}/${address.cidr}"
   ]
 }
