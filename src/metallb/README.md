@@ -32,3 +32,7 @@ module "metallb" {
 	configure_kind = true
 }
 ```
+
+## Cycle the Secret For Metallb
+
+(add something here about using terraform taint to cycle)
