@@ -5,7 +5,7 @@ variable "config" {
       protocol  = string
       addresses = list(string)
     }))
-    config_map_annotations = list(string)
+    config_map_annotations = map(string)
     config_map_data        = string
     config_map_data_peers = list(object({
       peer_address = string
