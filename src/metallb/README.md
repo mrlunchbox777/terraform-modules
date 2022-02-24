@@ -23,13 +23,8 @@ Here is an example of how to use metallb
 ```terraform
 module "metallb" {
 	source = "git::https://github.com/mrlunchbox777/terraform-modules//src/metallb?ref=metallb/999.999.999"
-
-	providers {
-		helm = helm.special
-		kubernetes = kubernetes.special
-	}
 	
-	configure_kind = true
+	config = module.my_custom_config_generator
 }
 ```
 

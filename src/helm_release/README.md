@@ -20,9 +20,6 @@ Here is an example of how to use helm_release
 module "release" {
 	source = "git::https://github.com/mrlunchbox777/terraform-modules//src/helm_release?ref=helm_release/999.999.999"
 
-	providers {
-		helm = helm.special
-		kubernetes = kubernetes.special
-	}
+	config = module.my_custom_config_generator
 }
 ```
