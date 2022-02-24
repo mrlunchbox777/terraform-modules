@@ -14,7 +14,7 @@ resource "kubernetes_secret" "metallb_memberlist_secret" {
     namespace   = var.config.helm_release_config.namespace
   }
 
-  binary_data = (length(var.config.memberlist_secret_override) > 0
+  binary_data = ((var.config.memberlist_secret_override != null && length(var.config.memberlist_secret_override) > 0)
     ? var.config.memberlist_secret_override
     : random_id.metallb_secret_key.id
   )
