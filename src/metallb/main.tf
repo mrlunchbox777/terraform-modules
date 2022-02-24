@@ -1,7 +1,7 @@
 locals {
   config_map_heredoc = (local.valid_config && var.config.config_map_data == null ? <<-EOF
-  %{if length(var.config.config_map_address_pools) > 0}address-pools:%{endif}
-  %{for pool in var.config.config_map_address_pools}
+  %{if length(var.config.config_map_data_address_pools) > 0}address-pools:%{endif}
+  %{for pool in var.config.config_map_data_address_pools}
   - name: ${pool.name}
     protocol: ${pool.protocol}
     addresses:
