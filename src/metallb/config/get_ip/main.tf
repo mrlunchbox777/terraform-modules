@@ -1,5 +1,5 @@
 locals {
-  ip_cidrs = data.external.get_ip_range.result.ips_and_cidrs.values
+  ip_cidrs = [for key, value in data.external.get_ip_range.result : "${key}"
 }
 
 data "external" "get_ip_range" {
