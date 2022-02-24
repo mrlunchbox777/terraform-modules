@@ -1,5 +1,5 @@
 locals {
-  config = { for k, v in local.initialmap :
+  config_for_lists = { for k, v in local.initialmap :
     k => (k == "values" || k == "set" || k == "set_sensitive" || k == "postrender"
       ? concat(
         try(coalescelist(local.initialmap[k], []), []),
@@ -7,6 +7,13 @@ locals {
         try(coalescelist(local.overridemap[k], []), []),
         try(coalescelist(local.parametersmap[k], []), [])
       )
+      : []
+    )
+  }
+
+  config = { for k, v in local.initialmap :
+    k => (k == "values" || k == "set" || k == "set_sensitive" || k == "postrender"
+      ? lookup(local.config_for_lists, k, null)
       : (lookup(local.parametersmap, k, null) != null
         ? lookup(local.parametersmap, k, null)
         : (lookup(local.overridemap, k, null) != null
