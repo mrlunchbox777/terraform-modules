@@ -23,7 +23,7 @@ variable "config" {
       repository_username        = string
       repository_password        = string
       devel                      = bool
-      version                    = string
+      chart_version              = string
       namespace                  = string
       verify                     = bool
       keyring                    = string
