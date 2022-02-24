@@ -10,14 +10,14 @@ locals {
 
 module "get_ip" {
   # source = "git::https://github.com/mrlunchbox777/terraform-modules//src/metallb/config/get_ip?ref=metallb/config/get_ip/0.0.1"
-  source = "git::https://github.com/mrlunchbox777/terraform-modules//src/metallb/config/get_ip?ref=bug/fixing-errors"
+  source = "git::/home/jaunty/src/tools/terraform-modules//src/metallb/config/get_ip?ref=bug/fixing-errors"
 
   network_name                  = var.network_name
 }
 
 module "config" {
   # source = "git::https://github.com/mrlunchbox777/terraform-modules//src/metallb/config?ref=metallb/config/0.0.1"
-  source = "git::https://github.com/mrlunchbox777/terraform-modules//src/metallb/config?ref=bug/fixing-errors"
+  source = "git::/home/jaunty/src/tools/terraform-modules//src/metallb/config?ref=bug/fixing-errors"
 
   override_config               = var.override_config
   config_map_annotations        = var.config_map_annotations

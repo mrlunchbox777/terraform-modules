@@ -17,7 +17,7 @@ Typically you'll want the latest version (found at the top of the last command, 
 Here is an example of how to use helm_release
 
 ```terraform
-module "pi_hole" {
+module "release" {
 	source = "git::https://github.com/mrlunchbox777/terraform-modules//src/helm_release?ref=helm_release/999.999.999"
 
 	providers {
