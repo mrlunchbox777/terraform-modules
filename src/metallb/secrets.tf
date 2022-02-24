@@ -3,7 +3,17 @@ locals {
     ? var.config.memberlist_secret_override
     : ""
   )
+
+  final_key = (length(local.key_override) > 0
+    ? local.key_override
+    : random_id.metallb_secret_key.id
+  )
+
+  final_key_map = {
+    secretkey = local.final_key
+  }
 }
+
 resource "random_id" "metallb_secret_key" {
   keepers = {
     override_status = var.config.memberlist_secret_override
@@ -20,8 +30,5 @@ resource "kubernetes_secret" "metallb_memberlist_secret" {
     namespace   = var.config.helm_release_config.namespace
   }
 
-  binary_data = (length(local.key_override) > 0
-    ? local.key_override
-    : random_id.metallb_secret_key.id
-  )
+  binary_data = local.final_key_map
 }
