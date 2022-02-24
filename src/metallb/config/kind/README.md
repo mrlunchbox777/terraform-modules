@@ -4,6 +4,8 @@ This is used to create a KinD [configuration object](/src/metallb/config/README.
 
 It provides good defaults for running a dev machine cluster when using KinD. By default it will use the [get_ip module](/src/metallb/config/get_ip/README.md) to find the KinD network ips it can use.
 
+[Docs on how to setup a KinD LB](https://kind.sigs.k8s.io/docs/user/loadbalancer/)
+
 ## Find Tags
 
 To find a usable tag run:
