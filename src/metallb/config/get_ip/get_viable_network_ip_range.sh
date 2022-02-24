@@ -3,6 +3,7 @@
 set -e
 
 # https://kind.sigs.k8s.io/docs/user/loadbalancer/
+# test with - echo '{"name":"kind"}' | ./get_viable_network_ip_range.sh 
 eval "$(jq -r '@sh "network_name=\(.name)"')"
 all_subnets=$(docker network inspect $network_name | jq '[.[] | .IPAM.Config | .[] | .Subnet]')
 ipv4_subnets=$(echo $all_subnets | jq '[.[] | select(test("^([0-9]{1,3}\\.){3}[0-9]{1,3}"))]')
@@ -27,4 +28,4 @@ done
 
 # TODO make an example of how to do this kind of work for external data sources
 # jq -n --arg ips_and_cidrs "$ips_and_cidrs" '{"ips_and_cidrs":$ips_and_cidrs}'
-echo $ips_and_cidrs | jq '{"ips_and_cidrs": .}'
+echo $ips_and_cidrs | jq '. |= to_entries | [.[] | {(.key|tostring): (.value.ips + "/" + .value.cidr)}] | reduce .[] as $x ({}; . * $x)'
