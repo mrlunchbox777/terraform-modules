@@ -32,9 +32,7 @@ resource "kubernetes_config_map" "metallb_config_map" {
     namespace   = var.config.helm_release_config.namespace
   }
 
-  data {
-    config = local.computed_config_map_data
-  }
+  data = local.computed_config_map_data
 }
 
 module "metallb" {
