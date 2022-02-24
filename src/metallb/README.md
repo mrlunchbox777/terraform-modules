@@ -6,6 +6,8 @@ Configured with [metallb config module](/src/metallb/config/README.md)
 
 If you are looking for a configuration for a development machine using kind [here are good defaults](/src/metallb/config/kind/README.md)
 
+[Docs on how to setup MetalLB](https://metallb.org/configuration/#bgp-configuration)
+
 ## Find Tags
 
 To find a usable tag run:
