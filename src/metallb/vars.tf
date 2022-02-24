@@ -12,7 +12,7 @@ variable "config" {
       peer_asn     = number
       my_asn       = number
     }))
-    config_map_labels = string
+    config_map_labels = map(string)
     helm_release_config = object({
       name                       = string
       chart                      = string
