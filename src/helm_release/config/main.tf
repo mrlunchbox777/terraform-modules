@@ -30,6 +30,5 @@ locals {
     )
   }
 
-    config = merge(config_temp, config_for_lists)
-  }
+  config = merge(config_temp, config_for_lists)
 }
