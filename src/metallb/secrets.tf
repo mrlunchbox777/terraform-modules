@@ -16,5 +16,6 @@ resource "kubernetes_secret" "metallb_memberlist_secret" {
 
   binary_data = (length(var.config.memberlist_secret_override) > 0
     ? var.config.memberlist_secret_override
-  : random_id.metallb_secret_key.id)
+    : random_id.metallb_secret_key.id
+  )
 }

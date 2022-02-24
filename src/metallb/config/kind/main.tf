@@ -12,7 +12,7 @@ module "get_ip" {
   # source = "git::https://github.com/mrlunchbox777/terraform-modules//src/metallb/config/get_ip?ref=metallb/config/get_ip/0.0.1"
   source = "git::/home/jaunty/src/tools/terraform-modules//src/metallb/config/get_ip?ref=bug/fixing-errors"
 
-  network_name                  = var.network_name
+  network_name = var.network_name
 }
 
 module "config" {
