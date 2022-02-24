@@ -1,7 +1,6 @@
 resource "random_id" "metallb_secret_key" {
   keepers = {
-    # helm_manifest = module.metallb.release.manifest
-    helm_revision = module.metallb.release.metadata["revision"]
+    override_status = var.config.memberlist_secret_override
   }
 
   byte_length = 128
