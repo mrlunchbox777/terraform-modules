@@ -6,7 +6,7 @@ variable "config" {
       addresses = list(string)
     }))
     config_map_annotations = map(string)
-    config_map_data        = string
+    config_map_data        = map(string)
     config_map_data_peers = list(object({
       peer_address = string
       peer_asn     = number

@@ -20,7 +20,7 @@ locals {
 
   computed_config_map_data = (var.config.config_map_data != null
     ? var.config.config_map_data
-    : local.config_map_heredoc
+    : {"config" = local.config_map_heredoc}
   )
 }
 

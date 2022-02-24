@@ -71,7 +71,7 @@ variable "config_map_annotations" {
 }
 
 variable "config_map_data" {
-  type        = string
+  type        = map(string)
   default     = null
   nullable    = true
   description = "Data for the config map to setup metallb, overrides all other config_map_data_* settings"
