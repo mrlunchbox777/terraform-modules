@@ -6,7 +6,7 @@ locals {
 
   final_key = (length(local.key_override) > 0
     ? local.key_override
-    : random_id.metallb_secret_key.id
+    : random_id.metallb_secret_key.b64_std
   )
 
   final_key_map = {
