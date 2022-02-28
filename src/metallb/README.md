@@ -33,3 +33,4 @@ module "metallb" {
 ## Cycle the Secret For Metallb
 
 (add something here about using terraform taint to cycle)
+Also need to figure out how to generate the secret using the random provider
