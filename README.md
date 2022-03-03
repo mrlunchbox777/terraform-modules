@@ -21,3 +21,7 @@ You should also be able to basically implement a [git module](https://www.terraf
 ## Find a way to integrate the basic-setup
 
 ## Find a way to integrate the pi-k3s-setup
+
+## Find a way to integrate pfSense
+
+there is a [nice api](https://github.com/jaredhendrickson13/pfsense-api)
