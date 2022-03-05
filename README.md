@@ -12,6 +12,8 @@ You should also be able to basically implement a [git module](https://www.terraf
 
 - [ ] [Rook](https://rook.io/)
 - [ ] [Screeps](https://github.com/yz89122/screeps-docker) and [Screeps Server](https://github.com/screeps/screeps)
+- [ ] [pi-hole](https://pi-hole.net/)
+- [ ] local CA
 - [ ] [FreeIPA](https://www.freeipa.org/page/About)
 - [ ] [CoreDNS](https://github.com/coredns/helm)
 - [ ] [Authelia](https://www.authelia.com/)
