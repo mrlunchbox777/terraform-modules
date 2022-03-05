@@ -16,6 +16,7 @@ locals {
 
 # what this needs to do - https://www.misterpki.com/openssl-rand/
 # provider docs - https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/id
+# a null resource might do this as well
 resource "random_id" "metallb_secret_key" {
   keepers = {
     override_status = var.config.memberlist_secret_override
