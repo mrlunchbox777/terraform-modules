@@ -19,6 +19,7 @@ You should also be able to basically implement a [git module](https://www.terraf
 - [ ] [Authelia](https://www.authelia.com/)
 - [ ] [Pluto Documentation](https://pluto.docs.fairwinds.com/)
 - [ ] [Goldilocks Documentation](https://goldilocks.docs.fairwinds.com/)
+- [ ] Consider IRC implementation - [The Lounge](https://thelounge.chat/)
 
 ## Find a way to integrate the basic-setup
 
