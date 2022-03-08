@@ -8,7 +8,7 @@ Here is an example of how to use self_signed_cert config
 
 ```terraform
 module "pi_hole" {
-	source = "git::https://github.com/mrlunchbox777/terraform-modules//src/self_signed_cert?ref=self_signed_cert/1.0.0"
+	source = "git::https://github.com/mrlunchbox777/terraform-modules//src/cert/config?ref=cert/config/1.0.0"
 
 	providers {
 		tls = tls.special
