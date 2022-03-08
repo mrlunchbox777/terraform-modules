@@ -32,3 +32,110 @@ variable "base_config" {
 	default = null
 	nullable = true
 }
+
+variable "key_override_algorithm" {
+  type        = string
+  default     = null
+  nullable    = true
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request#key_algorithm"
+}
+
+variable "key_override_private_pem" {
+  type        = string
+  default     = null
+  nullable    = true
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request#private_key_pem"
+}
+
+variable "common_name" {
+  type        = string
+  default     = null
+  nullable    = true
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request#subject"
+}
+
+variable "organization" {
+  type        = string
+  default     = null
+  nullable    = true
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request#subject"
+}
+
+variable "organizational_unit" {
+  type        = string
+  default     = null
+  nullable    = true
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request#subject"
+}
+
+variable "street_address" {
+  type        = list(string)
+  default     = null
+  nullable    = true
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request#subject"
+}
+
+variable "locality" {
+  type        = string
+  default     = null
+  nullable    = true
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request#subject"
+}
+
+variable "province" {
+  type        = string
+  default     = null
+  nullable    = true
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request#subject"
+}
+
+variable "country" {
+  type        = string
+  default     = null
+  nullable    = true
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request#subject"
+}
+
+variable "postal_code" {
+  type        = string
+  default     = null
+  nullable    = true
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request#subject"
+}
+
+variable "serial_number" {
+  type        = string
+  default     = null
+  nullable    = true
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request#subject"
+}
+
+variable "dns_names" {
+  type        = list(string)
+  default     = []
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request#dns_names"
+}
+
+variable "ip_addresses" {
+  type        = list(string)
+  default     = []
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request#ip_addresses"
+}
+
+variable "uris" {
+  type        = list(string)
+  default     = []
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request#uris"
+}
+
+    # key_config = {
+    #   algorithm = "ECDSA"
+    #   rsa_bits  = 4096
+    #   ecdsa_curve = "P521"
+    # }
+
+      # validity_period_hours = number
+      # allowed_uses = list(string)
+      # early_renewal_hours = number
+      # is_ca_certificate = bool
+      # set_subject_key_id = bool
