@@ -128,11 +128,23 @@ variable "uris" {
   description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request#uris"
 }
 
-    # key_config = {
-    #   algorithm = "ECDSA"
-    #   rsa_bits  = 4096
-    #   ecdsa_curve = "P521"
-    # }
+variable "private_key_algorithm" {
+  type        = string
+  default     = "ECDSA"
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key#algorithm"
+}
+
+variable "private_key_rsa_bits" {
+  type        = number
+  default     = 4096
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key#rsa_bits"
+}
+
+variable "private_key_ecdsa_curve" {
+  type        = string
+  default     = "P521"
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key#ecdsa_curve"
+}
 
       # validity_period_hours = number
       # allowed_uses = list(string)
