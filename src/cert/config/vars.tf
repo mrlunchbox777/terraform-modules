@@ -146,8 +146,43 @@ variable "private_key_ecdsa_curve" {
   description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key#ecdsa_curve"
 }
 
-      # validity_period_hours = number
-      # allowed_uses = list(string)
-      # early_renewal_hours = number
-      # is_ca_certificate = bool
-      # set_subject_key_id = bool
+variable "private_key_rsa_bits" {
+  type        = number
+  default     = 4096
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key#rsa_bits"
+}
+
+variable "validity_period_hours" {
+  type        = number
+  default     = 2160
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/locally_signed_cert#validity_period_hours or https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/locally_signed_cert#validity_period_hours"
+}
+
+variable "allowed_uses" {
+  type        = list(string)
+  default     = [
+        "key_encipherment",
+        "digital_signature",
+        "server_auth",
+        "client_auth"
+      ]
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/locally_signed_cert#allowed_uses or https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/self_signed_cert#allowed_uses"
+}
+
+variable "early_renewal_hours" {
+  type        = number
+  default     = 1440
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/locally_signed_cert#early_renewal_hours or https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/self_signed_cert#early_renewal_hours"
+}
+
+variable "is_ca_certificate" {
+  type        = bool
+  default     = false
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/locally_signed_cert#is_ca_certificate or https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/self_signed_cert#is_ca_certificate"
+}
+
+variable "set_subject_key_id" {
+  type        = bool
+  default     = false
+  description = "https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/locally_signed_cert#set_subject_key_id or https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/self_signed_cert#set_subject_key_id"
+}
