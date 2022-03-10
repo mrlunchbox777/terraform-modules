@@ -53,7 +53,7 @@ variable "base_config" {
   })
   default     = null
   nullable    = true
-  description = "Pass an base_config to provide base values"
+  description = "Pass a base_config to provide base values"
 }
 
 variable "override_config" {
