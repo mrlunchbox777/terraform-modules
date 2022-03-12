@@ -28,3 +28,4 @@ You should also be able to basically implement a [git module](https://www.terraf
 ## Find a way to integrate pfSense
 
 there is a [nice api](https://github.com/jaredhendrickson13/pfsense-api)
+It's not clear if we should include it from installation or just after installation.
