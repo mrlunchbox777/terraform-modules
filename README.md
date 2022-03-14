@@ -20,6 +20,7 @@ You should also be able to basically implement a [git module](https://www.terraf
 - [ ] [Pluto Documentation](https://pluto.docs.fairwinds.com/)
 - [ ] [Goldilocks Documentation](https://goldilocks.docs.fairwinds.com/)
 - [ ] Consider IRC implementation - [The Lounge](https://thelounge.chat/)
+- [ ] [Aqua](https://www.aquasec.com/products/kubernetes-security/)
 
 ## Find a way to integrate the basic-setup
 
