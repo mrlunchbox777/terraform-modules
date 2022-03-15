@@ -7,11 +7,6 @@ locals {
     : tls_private_key.private_key[0].private_key_pem)
 
   config = {
-    # key_config = {
-    #   algorithm = "ECDSA"
-    #   rsa_bits  = 4096
-    #   ecdsa_curve = "P521"
-    # }
     key_override = {
       key_algorithm = ""
       private_key_pem = ""
