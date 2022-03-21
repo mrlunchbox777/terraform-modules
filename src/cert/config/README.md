@@ -9,7 +9,7 @@ This is intended to be an easier to use wrapper around the [tls_locally_signed_c
 Here is an example of how to use self_signed_cert config
 
 ```terraform
-module "pi_hole" {
+module "cert_config" {
 	source = "git::https://github.com/mrlunchbox777/terraform-modules//src/cert/config?ref=cert/config/1.0.0"
 
 	providers {
