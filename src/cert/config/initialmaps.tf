@@ -5,42 +5,33 @@ locals {
   )
 
   initialmap = {
-    name                       = null
-    chart                      = null
-    repository                 = null
-    repository_key_file        = null
-    repository_cert_file       = null
-    repository_ca_file         = null
-    repository_username        = null
-    repository_password        = null
-    devel                      = null
-    chart_version              = null
-    namespace                  = null
-    verify                     = null
-    keyring                    = null
-    timeout                    = null
-    disable_webhooks           = null
-    reuse_values               = null
-    reset_values               = null
-    force_update               = null
-    recreate_pods              = null
-    cleanup_on_fail            = null
-    max_history                = null
-    atomic                     = null
-    skip_crds                  = null
-    render_subchart_notes      = null
-    disable_openapi_validation = null
-    wait                       = null
-    wait_for_jobs              = null
-    values                     = []
-    set                        = []
-    set_sensitive              = []
-    dependency_update          = null
-    replace                    = null
-    description                = null
-    postrender                 = []
-    lint                       = null
-    create_namespace           = null
+    key_override = {
+      key_algorithm = null
+      private_key_pem = null
+    }
+    self_signed_cert_config = {
+      cert_request = {
+        subject = {
+          common_name = null
+          organization = null
+          organizational_unit = null
+          street_address = []
+          locality = null
+          province = null
+          country = null
+          postal_code = null
+          serial_number = null
+        }
+        dns_names = []
+        ip_addresses = []
+        uris = []
+      }
+      validity_period_hours = null
+      allowed_uses = []
+      early_renewal_hours = null
+      is_ca_certificate = null
+      set_subject_key_id = null
+    }
   }
 
   overridemap = (var.override_config != null
@@ -49,41 +40,32 @@ locals {
   )
 
   parametersmap = {
-    name                       = var.name
-    chart                      = var.chart
-    repository                 = var.repository
-    repository_key_file        = var.repository_key_file
-    repository_cert_file       = var.repository_cert_file
-    repository_ca_file         = var.repository_ca_file
-    repository_username        = var.repository_username
-    repository_password        = var.repository_password
-    devel                      = var.devel
-    chart_version              = var.chart_version
-    namespace                  = var.namespace
-    verify                     = var.verify
-    keyring                    = var.keyring
-    timeout                    = var.timeout
-    disable_webhooks           = var.disable_webhooks
-    reuse_values               = var.reuse_values
-    reset_values               = var.reset_values
-    force_update               = var.force_update
-    recreate_pods              = var.recreate_pods
-    cleanup_on_fail            = var.cleanup_on_fail
-    max_history                = var.max_history
-    atomic                     = var.atomic
-    skip_crds                  = var.skip_crds
-    render_subchart_notes      = var.render_subchart_notes
-    disable_openapi_validation = var.disable_openapi_validation
-    wait                       = var.wait
-    wait_for_jobs              = var.wait_for_jobs
-    values                     = var.values
-    set                        = var.set
-    set_sensitive              = var.set_sensitive
-    dependency_update          = var.dependency_update
-    replace                    = var.replace
-    description                = var.description
-    postrender                 = var.postrender
-    lint                       = var.lint
-    create_namespace           = var.create_namespace
+    key_override = {
+      key_algorithm = var.key_override_algorithm
+      private_key_pem = var.private_key_pem
+    }
+    self_signed_cert_config = {
+      cert_request = {
+        subject = {
+          common_name = var.common_name
+          organization = var.organization
+          organizational_unit = var.organizational_unit
+          street_address = var.street_address
+          locality = var.locality
+          province = var.province
+          country = var.country
+          postal_code = var.postal_code
+          serial_number = var.serial_number
+        }
+        dns_names = var.dns_names
+        ip_addresses = var.ip_addresses
+        uris = var.uris
+      }
+      validity_period_hours = var.validity_period_hours
+      allowed_uses = var.allowed_uses
+      early_renewal_hours = var.early_renewal_hours
+      is_ca_certificate = var.is_ca_certificate
+      set_subject_key_id = var.set_subject_key_id
+    }
   }
 }
