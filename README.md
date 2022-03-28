@@ -14,7 +14,6 @@ You should also be able to basically implement a [git module](https://www.terraf
 - [ ] [Screeps](https://github.com/yz89122/screeps-docker) and [Screeps Server](https://github.com/screeps/screeps)
 - [ ] [pi-hole](https://pi-hole.net/)
 - [ ] local CA [some instructions](https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/) [terraform locally signed cert](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/locally_signed_cert)
-- [ ] [FreeIPA](https://www.freeipa.org/page/About)
 - [ ] [CoreDNS](https://github.com/coredns/helm)
 - [ ] [Authelia](https://www.authelia.com/)
 - [ ] [Pluto Documentation](https://pluto.docs.fairwinds.com/)
