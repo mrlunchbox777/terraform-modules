@@ -22,8 +22,6 @@ You should also be able to basically implement a [git module](https://www.terraf
 - [ ] Consider IRC implementation - [The Lounge](https://thelounge.chat/)
 - [ ] [Aqua](https://www.aquasec.com/products/kubernetes-security/)
 
-## Find a way to integrate the basic-setup
-
 ## Find a way to integrate the pi-k3s-setup
 
 ## Find a way to integrate pfSense
