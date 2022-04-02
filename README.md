@@ -10,8 +10,8 @@ You should also be able to basically implement a [git module](https://www.terraf
 
 ## Future Considerations
 
-- [ ] [Longhorn](https://github.com/longhorn/longhorn)
 - [ ] [Screeps](https://github.com/yz89122/screeps-docker) and [Screeps Server](https://github.com/screeps/screeps)
+- [ ] [Longhorn](https://github.com/longhorn/longhorn)
 - [ ] [Rancher](https://rancher.com/products/rancher)
 - [ ] [pi-hole](https://pi-hole.net/)
 - [ ] local CA [some instructions](https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/) [terraform locally signed cert](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/locally_signed_cert)
@@ -21,6 +21,10 @@ You should also be able to basically implement a [git module](https://www.terraf
 - [ ] [Goldilocks Documentation](https://goldilocks.docs.fairwinds.com/)
 - [ ] Consider IRC implementation - [The Lounge](https://thelounge.chat/)
 - [ ] [Aqua](https://www.aquasec.com/products/kubernetes-security/)
+
+## Screeps
+
+I think I'm going to work on screeps, getting it running, then work on persistence
 
 ## Find a way to integrate the pi-k3s-setup
 
