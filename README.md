@@ -24,7 +24,7 @@ You should also be able to basically implement a [git module](https://www.terraf
 
 ## Screeps
 
-I think I'm going to work on screeps, getting it running, then work on persistence
+I think I'm going to work on screeps. Getting it running first, then work on persistence
 
 ## Find a way to integrate the pi-k3s-setup
 
